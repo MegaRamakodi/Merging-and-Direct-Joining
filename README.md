@@ -162,4 +162,4 @@ Create M-DJ dataset
 ```
 ps.m.dj <- merge_phyloseq(ps.m,ps.um)
 ```
-The ps.m.dj object could be sued for further downstream analyses
+The ps.m.dj object could be used for further downstream analyses

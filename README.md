@@ -8,18 +8,18 @@ The following R packages should be installed on your workstation before running 
 - `stringr`
 - `Biostrings`
 ### Code
-**Calling the required packages
+**Calling the required packages**
 ```
 library(dada2)
 library(phyloseq)
 library(stringr)
 library(Biostrings)
 ```
-Assigning the path where the fastq files are stored
+**Assigning the path where the fastq files are stored**
 ```
 path <- "/home/mega/PROJECTS/DATA/Input_directory"
 ```
-Reading the files
+**Reading the files**
 ```
 fnFs <- sort(list.files(path, pattern="_R1.fastq.gz", full.names = TRUE))
 fnRs <- sort(list.files(path, pattern="_R2.fastq.gz", full.names = TRUE))

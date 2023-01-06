@@ -24,28 +24,28 @@ path <- "/home/mega/PROJECTS/DATA/Input_directory"
 fnFs <- sort(list.files(path, pattern="_R1.fastq.gz", full.names = TRUE))
 fnRs <- sort(list.files(path, pattern="_R2.fastq.gz", full.names = TRUE))
 ```
-Assigning sample names
+**Assigning sample names**
 ```
 sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
 ```
-Creating path to store filered data
+**Creating path to store filered data**
 ```
 filtFs<- file.path(path, "filtered", paste0(sample.names,"_F_filt.fastq.gz"))
 filtRs<- file.path(path, "filtered", paste0(sample.names,"_R_filt.fastq.gz"))
 names(filtFs) <- sample.names
 names(filtRs) <- sample.names
 ```
-Filtering the reads.
+**Filtering the reads**
 > _NOTE: User should change the values of the parameters as per their requirements_
 ```
 out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(230,210), maxEE=c(2,2), trimLeft=c(35,35), compress = TRUE, multithread = TRUE)
 ```
-Learning errors
+**Learning errors**
 ```
 errF <- learnErrors(filtFs, multithread=TRUE)
 errR <- learnErrors(filtRs, multithread=TRUE)
 ```
-Processing the data
+**Processing the data**
 ```
 # Sample inference and merger of paired-end reads
 mergers <- vector("list", length(sample.names))
@@ -104,23 +104,23 @@ for(sam in sample.names) {
 	sLICEs[[sam]] <- sLICE
 }
 ```
-Make Sequence Table
-_NOTE: st_jCon is optional._
+**Make Sequence Table**
+> _NOTE: st_jCon is optional._
 ```
 st_mergers <- makeSequenceTable(mergers)
 st_jCon <- makeSequenceTable(jConS)
 st_sLICE <- makeSequenceTable(sLICEs)
 ```
-Remove chimeras
+**Remove chimeras**
 > _NOTE: st.nochim.jCon is optional_
 ```
 st.nochim.mergers <- removeBimeraDenovo(st_mergers, method="consensus", multithread=TRUE, verbose=TRUE)
 st.nochim.jCon <- removeBimeraDenovo(st_jCon, method="consensus", multithread=TRUE, verbose=TRUE)
 st.nochim.sLICE <- removeBimeraDenovo(st_sLICE, method="consensus", multithread=TRUE, verbose=TRUE)
 ```
-Assigning taxonomy
+**Assigning taxonomy & creating phyloseq object**
 1. Loading the reference database
-_NOTE: User should change the path and name of the database in the code as required_
+> _NOTE: User should change the path and name of the database in the code as required_
 ```
 Ref <- "/home/mega/DATABASE/reference_database.fasta"
 ```
@@ -160,7 +160,7 @@ names(dna)<-taxa_names(ps.dj)
 ps.dj<- merge_phyloseq(ps.dj, dna)
 ps.dj
 ```
-Create M-DJ dataset
+**Creating the M-DJ dataset**
 ```
 ps.m.dj <- merge_phyloseq(ps.m,ps.um)
 ```

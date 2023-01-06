@@ -105,14 +105,14 @@ for(sam in sample.names) {
 }
 ```
 Make Sequence Table
-_st_jCon is optional._
+> _NOTE: st_jCon is optional._
 ```
 st_mergers <- makeSequenceTable(mergers)
 st_jCon <- makeSequenceTable(jConS)
 st_sLICE <- makeSequenceTable(sLICEs)
 ```
 Remove chimeras
-_st.nochim.jCon is optional_
+> _NOTE: st.nochim.jCon is optional_
 ```
 st.nochim.mergers <- removeBimeraDenovo(st_mergers, method="consensus", multithread=TRUE, verbose=TRUE)
 st.nochim.jCon <- removeBimeraDenovo(st_jCon, method="consensus", multithread=TRUE, verbose=TRUE)
@@ -125,7 +125,7 @@ _NOTE: User should change the path and name of the database in the code as requi
 Ref <- "/home/mega/DATABASE/reference_database.fasta"
 ```
 2. Processing st.nochim.mergers
-_This object contains the merged amplicon sequences_
+> _This object contains the merged amplicon sequences_
 ```
 taxa <- assignTaxonomy(st.nochim.mergers, Ref, multithread = TRUE, tryRC = TRUE)
 #Create the phyloseq object
@@ -137,7 +137,7 @@ ps.m<- merge_phyloseq(ps.m, dna)
 ps.m
 ```
 3. Processing st.nochim.sLICE
-_This object contains the directly-joined sequences that could not be merged_
+> _This object contains the directly-joined sequences that could not be merged_
 ```
 taxa <- assignTaxonomy(st.nochim.sLICE, Ref, multithread = TRUE, tryRC = TRUE)
 #Create the phyloseq object
@@ -149,7 +149,7 @@ ps.um<- merge_phyloseq(ps.um, dna)
 ps.um 
 ```
 4. Processing st.nochim.jCon
-_This object contains directly-joined sequences. Processing this object is optional_
+> _This object contains directly-joined sequences and processing this object is optional_
 ```
 taxa <- assignTaxonomy(st.nochim.jCon, Ref, multithread = TRUE, tryRC = TRUE)
 #Create the phyloseq object

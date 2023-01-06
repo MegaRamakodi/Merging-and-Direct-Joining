@@ -105,12 +105,14 @@ for(sam in sample.names) {
 }
 ```
 Make Sequence Table
+_st_jCon is optional._
 ```
 st_mergers <- makeSequenceTable(mergers)
 st_jCon <- makeSequenceTable(jConS)
 st_sLICE <- makeSequenceTable(sLICEs)
 ```
 Remove chimeras
+_st.nochim.jCon is optional_
 ```
 st.nochim.mergers <- removeBimeraDenovo(st_mergers, method="consensus", multithread=TRUE, verbose=TRUE)
 st.nochim.jCon <- removeBimeraDenovo(st_jCon, method="consensus", multithread=TRUE, verbose=TRUE)
@@ -147,7 +149,7 @@ ps.um<- merge_phyloseq(ps.um, dna)
 ps.um 
 ```
 4. Processing st.nochim.jCon
-_This object contains directly-joined sequences_
+_This object contains directly-joined sequences. Processing this object is optional_
 ```
 taxa <- assignTaxonomy(st.nochim.jCon, Ref, multithread = TRUE, tryRC = TRUE)
 #Create the phyloseq object

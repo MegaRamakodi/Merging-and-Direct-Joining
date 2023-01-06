@@ -8,7 +8,7 @@ The following R packages should be installed on your workstation before running 
 - `stringr`
 - `Biostrings`
 ### Code
-*Calling the required packages*
+**Calling the required packages
 ```
 library(dada2)
 library(phyloseq)
@@ -105,7 +105,7 @@ for(sam in sample.names) {
 }
 ```
 Make Sequence Table
-> _NOTE: st_jCon is optional._
+_NOTE: st_jCon is optional._
 ```
 st_mergers <- makeSequenceTable(mergers)
 st_jCon <- makeSequenceTable(jConS)

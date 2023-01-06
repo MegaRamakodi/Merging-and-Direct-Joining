@@ -4,11 +4,11 @@ This computational workflow follows a combination of merging and direct-joining 
 ## Prerequisites
 The following R packages should be installed on your workstation before running the codes. The codes were tested on R version 4.2.2. 
 - `dada2`
-- phyloseq
-- stringr
-- Biostrings
+- `phyloseq`
+- `stringr`
+- `Biostrings`
 ### Code
-Calling the required packages
+*Calling the required packages*
 ```
 library(dada2)
 library(phyloseq)

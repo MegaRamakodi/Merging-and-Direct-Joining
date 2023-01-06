@@ -36,7 +36,7 @@ names(filtFs) <- sample.names
 names(filtRs) <- sample.names
 ```
 Filtering the reads.
-> NOTE: User should change the values of the parameters as per their requirements
+> _NOTE: User should change the values of the parameters as per their requirements_
 ```
 out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(230,210), maxEE=c(2,2), trimLeft=c(35,35), compress = TRUE, multithread = TRUE)
 ```

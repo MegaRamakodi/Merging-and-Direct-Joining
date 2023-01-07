@@ -164,4 +164,4 @@ ps.dj
 ```
 ps.m.dj <- merge_phyloseq(ps.m,ps.um)
 ```
-The ps.m.dj object could be used for further downstream analyses
+**User can save the ps.m.dj object as rds file and can use it later for downstream analyses**

@@ -119,7 +119,7 @@ st.nochim.jCon <- removeBimeraDenovo(st_jCon, method="consensus", multithread=TR
 st.nochim.sLICE <- removeBimeraDenovo(st_sLICE, method="consensus", multithread=TRUE, verbose=TRUE)
 ```
 **Assigning taxonomy & creating phyloseq object**
-***For the convenience of users the assignTaxonomy module from dada2 is given below. However, the users can use IdTaxa tool for taxonomy assignment and create the phyloseq object***
+>***For the convenience of users the assignTaxonomy module from dada2 is given below. However, the users can use IdTaxa tool for taxonomy assignment and create the phyloseq object***
 1. Loading the reference database
 > _NOTE: User should change the path and name of the database in the code as required_
 ```

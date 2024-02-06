@@ -5,6 +5,7 @@ This computational workflow follows a combination of merging and direct-joining 
 This bioinformatics workflow also could be used to infer prokaryotic and eukaryotic diversity using mixed amplicon sequencing data without splitting the 16S and 18S rRNA reads. For more information, please read this [publication](https://academic.oup.com/femsle/advance-article/doi/10.1093/femsle/fnae009/7596553?searchresult=1).
 ## Citation
 Please consider citing the following publication, if you use the code in your research.
+
 [Meganathan P Ramakodi, Merging and concatenation of sequencing reads: a bioinformatics workflow for the comprehensive profiling of microbiome from amplicon data, FEMS Microbiology Letters, 2024;, fnae009, https://doi.org/10.1093/femsle/fnae009](https://academic.oup.com/femsle/advance-article/doi/10.1093/femsle/fnae009/7596553?searchresult=1).
 ## Prerequisites
 The following R packages should be installed on your workstation before running the codes. The codes were tested on R version 4.2.2. 
